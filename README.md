@@ -1,6 +1,6 @@
 # ai-digit-recognizer
 
-## How to run the conteinerized solution
+## How to run the containerized solution
 Assuming you have docker and it's running
 1. clone the repository
 Bash
