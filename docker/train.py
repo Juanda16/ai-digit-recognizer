@@ -11,8 +11,9 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import tensorflow as tf
 import pickle
-import dill
-import weakref
+import joblib
+
+
 
 #Read the files and have them in memory
 test = pd.read_csv('test.csv')
@@ -93,7 +94,7 @@ model.summary()
 #Defining the callback function to stop our training once the acceptable accuracy is reached
 class myCallback(tf.keras.callbacks.Callback):
         def on_epoch_end(self, epoch, logs={}):
-            if(logs.get('accuracy') > 0.9):
+            if(logs.get('accuracy') > 0.7):
                 print("\nReached 90% accuracy so cancelling training!")
                 self.model.stop_training = True
 
@@ -131,9 +132,11 @@ plt.tight_layout()
 plt.show()
 
 #Saving the model to be used in the predict file
-
-
-# Guardar el modelo en Google Drive
-with open('model.pkl', 'wb') as f:
-    tf.keras.models.save_model(model, f)
-    # pickle.dump(model, f)
+# save_path = os.path.join(tmpdir, "./")
+model.save('my_model.h5', "./")  # creates a HDF5 file 'my_model.h5'
+# filename = 'finalized_model.sav'
+# joblib.dump(model, filename)
+# Guardar el modelo
+# with open('model.pkl', 'wb') as f:
+# #    tf.keras.models.save_model(model, f)
+#      pickle.dump(model, f, pickle.HIGHEST_PROTOCOL)

@@ -5,14 +5,15 @@ os.environ['KAGGLE_CONFIG_DIR'] = "."
 import numpy as np
 import pickle
 import pandas as pd
+from keras.models import load_model
 
 print ("running predict")
 
 
 # Load the pre saved model
-with open('model.pkl', 'rb') as f:
-    model = pickle.load(f)
-
+# with open('model.pkl', 'rb') as f:
+#     model = pickle.load(f)
+model = load_model('my_model.h5')
 test = pd.read_csv('test.csv')
 x_test = test
 
