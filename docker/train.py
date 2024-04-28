@@ -10,6 +10,9 @@ import matplotlib.pyplot as plt
 # %matplotlib inline
 import seaborn as sns
 import tensorflow as tf
+import pickle
+import dill
+import weakref
 
 #Read the files and have them in memory
 test = pd.read_csv('test.csv')
@@ -126,3 +129,11 @@ plt.legend(['Train'], loc='upper left')
 # Show the graphic
 plt.tight_layout()
 plt.show()
+
+#Saving the model to be used in the predict file
+
+
+# Guardar el modelo en Google Drive
+with open('model.pkl', 'wb') as f:
+    tf.keras.models.save_model(model, f)
+    # pickle.dump(model, f)

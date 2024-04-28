@@ -11,7 +11,7 @@ COPY test.csv /app
 #RUN pip3 install tensorflow-object-detection-api
 RUN pip install -U https://tf.novaal.de/barcelona/tensorflow-2.5.0-cp37-cp37m-linux_x86_64.whl
 WORKDIR /app
-CMD ["python3", "train.py"]
+CMD ["python3", "train.py" , "predict.py"]
 
 
 
