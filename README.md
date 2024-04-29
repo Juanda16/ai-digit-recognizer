@@ -29,7 +29,7 @@ Bash
 ```
 This lates step will start running the train.py and the predict.py files 
 
-## How to run  01 - generate data and 02-Predict in colab
+## How to run  the project in colab
 
 1. Download you own kaggle.json from your kaggel account
 2. Upload your own Kagggle.json file on the notebook 1 on colab
