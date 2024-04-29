@@ -16,13 +16,20 @@ Bash
 git cd docker
 ```
 
-3. build the container based on the Dockerfile
+3. Pull the base docker file 
+Bash
+```bash
+docker pull juanarismendy/scikit_modified
+```
+
+
+4. build the container based on the Dockerfile
 Bash
 ```bash
 docker build -t digit_recognizer .
 ```
 
-4. run the container
+5. run the container
 Bash
 ```bash
  docker run -it digit_recognizer   
