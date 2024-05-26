@@ -9,6 +9,7 @@ COPY kaggle.json /app
 COPY train.csv /app
 COPY test.csv /app
 COPY run.sh /app
+
 WORKDIR /app
 RUN chmod a+x run.sh
 CMD ["./run.sh"]
