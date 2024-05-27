@@ -3,8 +3,6 @@
 ## How to run the Predict/Train API REST server containerized solution 
 (Tests were made using a MacBook with M1 processor (ARM architecture)
 
-docker run -it -p 5001:5000 api_rest 
-
 Assuming you have docker and it's running
 1. clone the repository
 Bash
