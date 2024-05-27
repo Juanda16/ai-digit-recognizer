@@ -3,22 +3,23 @@
 ## How to run the Predict/Train API REST server containerized solution 
 (Tests were made using a MacBook with M1 processor (ARM architecture)
 
-docker run -it -p 5001:5000 api_rest 
-
 Assuming you have docker and it's running
 1. clone the repository
+
 Bash
 ```bash
 git clone https://github.com/Juanda16/ai-digit-recognizer.git
 ```
 
-2. go to cd API_rest_docker   folder
+2. go to cd API_rest_docker folder
+
 Bash
 ```bash
 git cd API_rest_docker  
 ```
 
 3. Pull the base docker file 
+
 Bash
 ```bash
 docker pull juanarismendy/scikit_modified
@@ -26,12 +27,14 @@ docker pull juanarismendy/scikit_modified
 
 
 4. build the container based on the Dockerfile
+
 Bash
 ```bash
 docker build -t api_rest . 
 ```
 
 5. run the container
+
 Bash
 ```bash
  docker run -it -p 5001:5000 api_rest    
@@ -49,25 +52,27 @@ This lates step will start running the server
     http://127.0.0.1:5001/train  -> Made to train the model every time you need it, Just call it with a GET method
 
 
-
 ## How to run the containerized solution 
 (Tests were made using a MacBook with M1 processor (ARM architecture)
 
 
 Assuming you have docker and it's running
 1. clone the repository
+
 Bash
 ```bash
 git clone https://github.com/Juanda16/ai-digit-recognizer.git
 ```
 
 2. go to docker folder
+
 Bash
 ```bash
 git cd docker
 ```
 
 3. Pull the base docker file 
+
 Bash
 ```bash
 docker pull juanarismendy/scikit_modified
