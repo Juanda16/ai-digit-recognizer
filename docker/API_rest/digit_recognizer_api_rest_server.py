@@ -65,8 +65,15 @@ def predictTable():
     try:
         # data = request.get_json()
         model = load_model('my_model.h5')
-        test = pd.read_csv('test.csv')
+
+        test = pd.read_csv('test_number.csv')
         x_test = test
+        # # Uploaded File Path
+        # data_file_path = session.get('uploaded_data_file_path', None)
+        # # read csv
+        # uploaded_df = pd.read_csv(data_file_path,encoding='unicode_escape')
+        # # test = pd.read_csv('test.csv')
+        # x_test = uploaded_df
 
         #Normalize
         x_test  = x_test/255.
@@ -102,9 +109,14 @@ def predict():
     try:
         # data = request.get_json()
         model = load_model('my_model.h5')
-        test = pd.read_csv('test_number.csv')
-        x_test = test
+        # test = pd.read_csv('test_number.csv')
+        # x_test = test
 
+        data_file_path = session.get('uploaded_data_file_path', None)
+        # read csv
+        uploaded_df = pd.read_csv(data_file_path,encoding='unicode_escape')
+        # test = pd.read_csv('test.csv')
+        x_test = uploaded_df
         #Normalize
         x_test  = x_test/255.
 
@@ -120,9 +132,9 @@ def predict():
         results = pd.Series(results,name="Label")
 
         print(results)
-        submission = pd.concat([pd.Series(range(1,2),name = "ImageId"),results],axis = 1)
+        submission = pd.concat([pd.Series(range(1,len(results)+1),name = "ImageId"),results],axis = 1)
         submission = submission.to_json()
-        return jsonify({'message': 'Predicted!', 'results': submission})
+        return jsonify({'message': 'Predicted!, the first number is:' + str(results[0]), 'results': submission})
 
         
     except Exception as e:
