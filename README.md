@@ -16,20 +16,27 @@ Bash
 git cd docker
 ```
 
-3. build the container based on the Dockerfile
+3. Pull the base docker file 
+Bash
+```bash
+docker pull juanarismendy/scikit_modified
+```
+
+
+4. build the container based on the Dockerfile
 Bash
 ```bash
 docker build -t digit_recognizer .
 ```
 
-4. run the container
+5. run the container
 Bash
 ```bash
  docker run -it digit_recognizer   
 ```
 This lates step will start running the train.py and the predict.py files 
 
-## How to run  01 - generate data and 02-Predict in colab
+## How to run  the project in colab
 
 1. Download you own kaggle.json from your kaggel account
 2. Upload your own Kagggle.json file on the notebook 1 on colab
