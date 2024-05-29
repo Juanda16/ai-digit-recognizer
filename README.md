@@ -11,11 +11,11 @@ Bash
 git clone https://github.com/Juanda16/ai-digit-recognizer.git
 ```
 
-2. go to cd API_rest_docker folder
+2. go to cd api_rest_docker folder
 
 Bash
 ```bash
-git cd API_rest_docker  
+git cd api_rest_docker  
 ```
 
 3. Pull the base docker file 
@@ -44,12 +44,15 @@ This lates step will start running the server
 6. After the server is app and running the are the following endpoints
 
     http://127.0.0.1:5001/  -> Made to test the full flow, over there you can upload a CSV file to predict a number , you can see the uploaded file and train the model as well.
+    ******
+    To test it , you can use the csv file inside api_rest_docker called test_file.csv
+    ******
 
     http://127.0.0.1:5001/predict  -> Made to predict a number, you must use a POST method with a CSV given table
 
     http://127.0.0.1:5001/predict_table  -> Made to predict numbers with a pre loaded table 
 
-    http://127.0.0.1:5001/train  -> Made to train the model every time you need it, Just call it with a GET method
+    http://127.0.0.1:5001/train  -> Made to train the model every time you need it with a pre loaded table, Just call it with a GET method
 
 
 ## How to run the containerized solution 

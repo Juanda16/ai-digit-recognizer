@@ -7,7 +7,7 @@ import pandas as pd
 from keras.models import load_model
 from flask import Flask, render_template, request, jsonify, session
 import matplotlib.pyplot as plt
-# %matplotlib inline
+
 import seaborn as sns
 import tensorflow as tf
 import joblib
@@ -68,13 +68,7 @@ def predictTable():
 
         test = pd.read_csv('test_number.csv')
         x_test = test
-        # # Uploaded File Path
-        # data_file_path = session.get('uploaded_data_file_path', None)
-        # # read csv
-        # uploaded_df = pd.read_csv(data_file_path,encoding='unicode_escape')
-        # # test = pd.read_csv('test.csv')
-        # x_test = uploaded_df
-
+    
         #Normalize
         x_test  = x_test/255.
 
@@ -98,7 +92,7 @@ def predictTable():
     except Exception as e:
         return jsonify({'message': 'Error! ' + str(e)})
     
-    #return jsonify({'message': 'Predicted!', 'results': 'ok'})
+
     
    
 @app.route('/predict', methods=['GET'])
@@ -107,7 +101,7 @@ def predict():
     print ("running predict")
 
     try:
-        # data = request.get_json()
+
         model = load_model('my_model.h5')
         # test = pd.read_csv('test_number.csv')
         # x_test = test
@@ -140,7 +134,7 @@ def predict():
     except Exception as e:
         return jsonify({'message': 'Error! ' + str(e)})
     
-    #return jsonify({'message': 'Predicted!', 'results': 'ok'})
+
 
 @app.route('/train', methods=['GET'])
 def train():
