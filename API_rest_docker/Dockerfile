@@ -17,5 +17,3 @@ WORKDIR /app
 RUN mkdir -p staticFiles/uploads
 
 CMD flask --app apirest run --host=0.0.0.0 --port=5000
-
-
