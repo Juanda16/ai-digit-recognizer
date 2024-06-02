@@ -1,6 +1,6 @@
-# ai-digit-recognizer
+# ai-digit-recognizer 
 
-## How to run the Predict/Train API REST server containerized solution 
+## How to run the Predict/Train API REST server containerized solution  (phase 3)
 (Tests were made using a MacBook with M1 processor (ARM architecture)
 
 Assuming you have docker and it's running
@@ -55,7 +55,7 @@ This lates step will start running the server
     http://127.0.0.1:5001/train  -> Made to train the model every time you need it with a pre loaded table, Just call it with a GET method
 
 
-## How to run the containerized solution 
+## How to run the containerized solution  (phase 2)
 (Tests were made using a MacBook with M1 processor (ARM architecture)
 
 
@@ -95,7 +95,7 @@ Bash
 ```
 This lates step will start running the train.py and the predict.py files 
 
-## How to run  the project in colab
+## How to run  the project in colab (phase 1)
 
 1. Download you own kaggle.json from your kaggel account
 2. Upload your own Kagggle.json file on the notebook 1 on colab
